@@ -12,7 +12,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    public const CATEGORIES = ['Category1', 'Category2', 'Category3', 'Category4', 'Category5'];
+    public const CATEGORIES = ['Announcement', 'Events', 'Peace & Order', 'Health', 'Ayuda'];
 
     protected $fillable = [
         'author_id',
@@ -22,7 +22,7 @@ class Post extends Model
         'is_published',
         'is_pinned',
         'published_at',
-        'views'
+        'views',
     ];
 
     protected $casts = [
