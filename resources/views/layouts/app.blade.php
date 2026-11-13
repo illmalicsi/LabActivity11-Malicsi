@@ -17,6 +17,18 @@
 
             <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm sm:justify-end">
                 <a href="{{ route('posts.index') }}" class="hover:text-orange-200">Posts</a>
+
+                @auth
+                <span class="text-orange-200">{{ auth()->user()->name }}</span>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="rounded bg-white/10 px-3 py-1 hover:bg-white/20">Logout</button>
+                </form>
+                @endauth
+
+                @guest
+                <a href="{{ route('login') }}" class="rounded bg-orange-600 px-3 py-1 font-medium hover:bg-orange-700">Sign in</a>
+                @endguest
             </div>
         </div>
     </nav>
